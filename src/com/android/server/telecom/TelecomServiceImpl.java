@@ -2769,11 +2769,11 @@ public class TelecomServiceImpl {
         Call call = mCallsManager.getFirstCallWithState(CallState.RINGING,
                 CallState.SIMULATED_RINGING);
         if (call != null) {
-            if (call.isSelfManaged()) {
+/*            if (call.isSelfManaged()) {
                 Log.addEvent(call, LogUtils.Events.REQUEST_ACCEPT,
                         "self-mgd accept ignored from " + packageName);
                 return;
-            }
+            }*/
 
             if (videoState == DEFAULT_VIDEO_STATE || !isValidAcceptVideoState(videoState)) {
                 videoState = call.getVideoState();
@@ -2802,11 +2802,11 @@ public class TelecomServiceImpl {
                 return false;
             }
 
-            if (call.isSelfManaged()) {
+/*            if (call.isSelfManaged()) {
                 Log.addEvent(call, LogUtils.Events.REQUEST_DISCONNECT,
                         "self-mgd disconnect ignored from " + callingPackage);
                 return false;
-            }
+            }*/
 
             if (call.getState() == CallState.RINGING
                     || call.getState() == CallState.SIMULATED_RINGING) {
